@@ -7,7 +7,7 @@
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 6vh 70vh 100vh 5vh;
+    grid-template-rows: 4% 70vh 100vh 5vh;
     grid-template-areas:"h h"
                         "m m"
                         "a a"
@@ -65,7 +65,8 @@ main{
 }
 
 .ilustration{
-    max-width: 680px;
+    width: 38%;
+    height: 100%;
     top: 598px;
     left: 61px;
 }
@@ -99,6 +100,7 @@ aside{
     transform: translate(-50%, -50%);
     background: #00AFB9;
     height:60px;
+    width: 60%;
     border-radius:40px;
     padding: 10px;
 }
