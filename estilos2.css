@@ -118,15 +118,15 @@ main{
   }
   
   /* Add some padding inside the card container */
-  .container {
+ .container {
     padding: 20px 16px;
     text-align: center;
     background: white;
     border-radius: 0 0 10px 10px;
     height: 130px;
-  }
+  } 
 
-.profile {
+ .profile {
     border-radius: 10px 10px 0 0;
   }
 
