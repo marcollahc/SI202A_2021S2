@@ -4,40 +4,48 @@ import "./noticeList";
 import styled from "styled-components";
 
 const Capa = styled.img`
-    height: 300px;
-    width: 400px;
-    border-radius: 30px;
+  height: 300px;
+  width: 400px;
+  display: none;
 `;
 
 class NoticeCD extends Component {
   state = {
-    title: '',
-    url: '',
-    urlToImage: '',
-    description: '',
+    title: "",
+    url: "",
+    urlToImage: "",
+    description: "",
+    publishedAt: "",
     imageLoading: true,
-    toManyRequests: false
+    toManyRequests: false,
   };
 
   componentDidMount() {
-    const {title, urlToImage, url} = this.props;
-    this.setState({title, urlToImage, url});
+    const { title, urlToImage, url, publishedAt } = this.props;
+    this.setState({ title, urlToImage, url, publishedAt });
   }
 
   render() {
     return (
       <div className="pageNotices">
         <div className="mainCardNotices">
-          <div className="CardNotices" onClick={() => (window.open(this.state.url))}>
-            <Capa 
-                className="cardImage" 
-                src={this.state.urlToImage}
-                onLoad={() => this.setState({imageLoading: false})}
-                onError={() => this.setState({toManyRequests: false})}
+          <div
+            className="CardNotices"
+            onClick={() => window.open(this.state.url)}
+          >
+            {this.state.imageLoading ? <div class="cLoader" style={{height:"200px", 
+            width:"200px",
+            display: "flex",
+            marginLeft: "107px",
+            marginTop: "85px"}}></div> : null}
+            <Capa
+              className="cardImage"
+              src={this.state.urlToImage}
+              onLoad={() => this.setState({ imageLoading: false })}
+              onError={() => this.setState({ toManyRequests: false })}
+              style={this.state.imageLoading ? null : { display: "block" }}
             />
-            <h4>
-              {this.state.title}
-            </h4>
+            <h4>{this.state.title}</h4>
           </div>
         </div>
       </div>

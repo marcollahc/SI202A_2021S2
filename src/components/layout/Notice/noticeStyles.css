@@ -7,7 +7,8 @@
 }
 
 .pageNotices {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 40px;
 }
 
 .mainCardNotices {
@@ -17,15 +18,22 @@
   text-align: right;
 }
 
+h6{
+    font-size: 22px;
+    font-weight: normal;
+}
+
 h4 {
   font-size: 22px;
+  font-weight: normal;
+  max-width: 400px;
+
 }
 
 .CardNotices {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  border-radius: 30px;
   align-items: center;
   width: 400px;
   height: 500px;
@@ -38,6 +46,17 @@ h4 {
   margin-left: 20px;
   background-color: white;
   cursor: pointer;
+}
+
+.CardNotices:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  height: 503px;
+  width: 403px;
+}
+
+.CardNotices:hover .cardImage{
+  height: 303px;
+  width: 403px;
 }
 
 .cLoader {

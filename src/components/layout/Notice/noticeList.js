@@ -5,7 +5,7 @@ import axios from "axios";
 
 class NoticeList extends Component {
   state = {
-    url: "https://newsapi.org/v2/top-headlines?country=br&apiKey=975707ebb7d3485b9901a640d37728fa",
+    url: "https://newsapi.org/v2/top-headlines?country=br&pageSize=32&apiKey=975707ebb7d3485b9901a640d37728fa",
     noticeOpen: null,
   };
 
@@ -24,6 +24,7 @@ class NoticeList extends Component {
                 title={noticeShow.title}
                 urlToImage={noticeShow.urlToImage}
                 url={noticeShow.url}
+                publishedAt={noticeShow.publishedAt}
               />
             ))}
           </div>
