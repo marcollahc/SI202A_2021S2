@@ -1,30 +1,33 @@
-import './App.css';
-import React, { Component } from 'react'
-import NavBar from './components/layout/NavBar';
-import newsImage from './news.svg';
-import SearchBox from './components/layout/SearchBox';
-import Sobrenos from './components/layout/Sobrenos';
-import {Route, Link} from 'react-router-dom';
+import "./App.css";
+import React, { Component } from "react";
+import Home from "./components/layout/Home";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import NavBar from "./components/layout/NavBar";
+import Sobre from "./components/layout/Sobrenos";
+import Footer from "./components/layout/footer";
+import SearchBar from "./components/layout/SearchBox";
 
-
-class Home extends Component {
+class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Route exact path="/Sobre" component={Sobrenos}/>
-        <NavBar/>
-        <div className="main">
-        <img className="ilustration" src={newsImage} alt="ilustra"/>
-            <div class="text1">
-                <h1>Mantenha-se informado!</h1>
-                <h6>CampNews é o seu mais confiável portal de notícias nacionais.<br/> Acesse e leia reportagens redirecionadas dos jornais mais respeitados.</h6>
-            </div>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route path="/" exact component={Home}/>
+            <Route path="/Sobrenos.js" exact component={Sobre} />
+          </Switch>
+          <Footer/>
         </div>
-        <SearchBox/>
-      </div>
-    )
+      </Router>
+    );
   }
 }
 
+export default App;
 
-export default Home;
+/*<Router>
+<Switch>
+  <Route exact path="/Sobre" component={Sobre} />
+</Switch>
+</Router>*/

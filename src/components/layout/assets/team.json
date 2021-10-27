@@ -1,0 +1,29 @@
+[
+    {
+      "name": "Guilherme Braz",
+      "image": "guilherme.jpg",
+      "social":"https://www.linkedin.com/in/guilherme-braz-61538a21b/",
+      "tag": "/guilhermebraz"
+    },
+  
+    {
+      "name": "Gustavo Romagnolo",
+      "image": "guto.jpg",
+      "social": "https://www.linkedin.com/in/gustavo-romagnolo-055584177/",
+      "tag": "/gustavoromagnolo"
+    },
+  
+    {
+      "name": "Marcos Medeiros",
+      "image": "marcos.jpg",
+      "social": "https://www.linkedin.com/in/marcos-medeiros-1baa7b63/",
+      "tag": "/marcosmedeiros"
+    },
+  
+    {
+      "name": "Thamires Prado",
+      "image": "thamires.jpg",
+      "social": "https://www.linkedin.com/in/thamiresprado/",
+      "tag": "/thamiresprado"
+    }
+]

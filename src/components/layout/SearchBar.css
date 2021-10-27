@@ -1,9 +1,7 @@
 .searchInputs {
-  margin-top: -40px;
   display: flex;
-  margin-left: 600px;
   outline: none;
-  
+  justify-content:flex-end;
 }
 
 .search input {
@@ -15,11 +13,12 @@
   opacity: 1;
   width: 600px;
   border: solid;
-  border-color: #06c7d2;
+  border-color: #00c6ff;
+  
 }
 
 .searchIcon {
-  background-color: #06c7d2;
+  background-color: #00c6ff;
   border: 30;
   display: grid;
   place-items: center;
@@ -56,7 +55,6 @@ input:focus {
 .dataResult .dataItem {
   width: 100%;
   height: 50px;
-  display: flex;
   align-items: center;
   color: black;
 }

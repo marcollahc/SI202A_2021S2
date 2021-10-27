@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Link} from 'react-router-dom';
-import Home from "../../App";
+import CalendarTodayRoundedIcon from '@mui/icons-material/CalendarTodayRounded';
 
 export default class NavBar extends Component {
   render() {
@@ -14,21 +14,22 @@ export default class NavBar extends Component {
 
     return (
       <div className="header">
-        <a href="index.html">
+        <Link to="/">
           <img className="logoBarra" src="Campnews.png" alt="logo" />
-        </a>
+        </Link>
 
-        <div className="dateBar">
+        <div className="dateBar" style={{display:"flex", marginLeft:"120px"}}>
+          <CalendarTodayRoundedIcon className="calendarIcon"/>
           <a>{dataAtual}</a>
         </div>
 
         <nav>
           <ul className="elementosBarra">
             <li>
-              <a href="index.html">HOME</a>
+            <Link to="/">HOME</Link>
             </li>
             <li>
-              <Link to="/Sobre">SOBRE NÓS</Link>
+              <Link to="/Sobrenos.js">SOBRE NÓS</Link>
             </li>
           </ul>
         </nav>
