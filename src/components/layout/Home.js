@@ -18,7 +18,7 @@ class Home extends Component {
                   <br /> Acesse e leia reportagens redirecionadas dos jornais
                   mais respeitados.
                 </h6>
-                <SearchBar/>
+                <SearchBar placeholder="O que está buscando?"/>
               </div>
             </div>
           <NoticeList/>

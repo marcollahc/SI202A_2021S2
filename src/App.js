@@ -5,7 +5,6 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import NavBar from "./components/layout/NavBar";
 import Sobre from "./components/layout/Sobrenos";
 import Footer from "./components/layout/footer";
-import SearchBar from "./components/layout/SearchBox";
 
 class App extends Component {
   render() {
@@ -25,9 +24,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*<Router>
-<Switch>
-  <Route exact path="/Sobre" component={Sobre} />
-</Switch>
-</Router>*/

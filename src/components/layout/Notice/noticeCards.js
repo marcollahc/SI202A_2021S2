@@ -16,13 +16,14 @@ class NoticeCD extends Component {
     urlToImage: "",
     description: "",
     publishedAt: "",
+    content:"",
     imageLoading: true,
     toManyRequests: false,
   };
 
   componentDidMount() {
-    const { title, urlToImage, url, publishedAt } = this.props;
-    this.setState({ title, urlToImage, url, publishedAt });
+    const { title, urlToImage, url, publishedAt, content} = this.props;
+    this.setState({ title, urlToImage, url, publishedAt, content});
   }
 
   render() {
