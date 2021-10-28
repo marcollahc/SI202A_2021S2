@@ -1,26 +1,20 @@
 import React, { Component } from "react";
 import NoticeCD from "./noticeCards";
 import "./noticeStyles.css";
-import axios from "axios";
 
 class NoticeList extends Component {
-  state = {
-    url: "https://newsapi.org/v2/top-headlines?country=br&pageSize=32&apiKey=975707ebb7d3485b9901a640d37728fa",
-    noticeOpen: null,
-  };
-
-  async componentDidMount() {
-    const res = await axios.get(this.state.url);
-    this.setState({ noticeOpen: res.data["articles"] });
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
-      <React.Fragment className="Fragment">
-        {this.state.noticeOpen ? (
+      <React.Fragment>
+        { this.props.news ? (
           <div className="rowNotices">
-            {this.state.noticeOpen.map((noticeShow) => (
+            {this.props.news.map((noticeShow, index) => (
               <NoticeCD
+                key={index}
                 title={noticeShow.title}
                 urlToImage={noticeShow.urlToImage}
                 url={noticeShow.url}
@@ -29,9 +23,9 @@ class NoticeList extends Component {
             ))}
           </div>
         ) : (
-          <div class="cLoader">
+          <div className="cLoader">
           </div>
-        )}
+        ) }
       </React.Fragment>
     );
   }

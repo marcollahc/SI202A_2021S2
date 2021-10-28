@@ -34,7 +34,7 @@ class NoticeCD extends Component {
             className="CardNotices"
             onClick={() => window.open(this.state.url)}
           >
-            {this.state.imageLoading ? <div class="cLoader" style={{height:"200px", 
+            {this.state.imageLoading ? <div className="cLoader" style={{height:"200px", 
             width:"200px",
             display: "flex",
             marginLeft: "107px",
