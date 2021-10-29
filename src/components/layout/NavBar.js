@@ -29,7 +29,7 @@ export default class NavBar extends Component {
             <Link to="/">HOME</Link>
             </li>
             <li>
-              <Link to="/Sobrenos.js">SOBRE NÓS</Link>
+              <Link to="/sobre-nos">SOBRE NÓS</Link>
             </li>
           </ul>
         </nav>

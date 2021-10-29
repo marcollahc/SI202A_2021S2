@@ -12,12 +12,12 @@ class Sobre extends Component {
         <div className="mainCards">
           {_.map(teamMates, (chosenOne, index) => {
             const mateName = _.get(chosenOne, "name");
-            const mateImage = require(`./assets/${chosenOne.image}`).default;
+            const mateImage = require(`./assets/${chosenOne.image}`);
             const mateTag = _.get(chosenOne, "tag");
             const mateSocial = _.get(chosenOne, "social");
 
             return (
-              <div className="card">
+              <div className="card" key={index}>
                 <img className="profile" src={mateImage} alt="Avatar" />
                 <div className="containerCard">
                   <h4>

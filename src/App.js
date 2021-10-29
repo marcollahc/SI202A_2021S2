@@ -14,7 +14,7 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route path="/" exact component={Home}/>
-            <Route path="/Sobrenos.js" exact component={Sobre} />
+            <Route path="/sobre-nos" exact component={Sobre} />
           </Switch>
           <Footer/>
         </div>
