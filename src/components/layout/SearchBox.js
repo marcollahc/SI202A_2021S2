@@ -1,58 +1,47 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import "./SearchBar.css";
 import SearchIcon from "@material-ui/icons/Search";
-import CloseIcon from "@material-ui/icons/Close";
+class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      wordEntered: ""
+    };
 
-function SearchBar({ placeholder, action }) {
-  const [filteredData, setFilteredData] = useState([]);
-  const [wordEntered, setWordEntered] = useState("");
-
-  const handleFilter = (event) => {
-    const searchWord = event.target.value;
-    setWordEntered(searchWord);
-  };
-
-  const clearInput = () => {
-    setFilteredData([]);
-    setWordEntered("");
-  };
-
-  const handleFind = () => {
-    if (wordEntered !== '') {
-      action(wordEntered);
-    }
+    this.handleFilter = this.handleFilter.bind(this);
+    this.handleFind = this.handleFind.bind(this);
+    this.clearInput = this.clearInput.bind(this);
   }
 
-  return (
-    <div className="search">
-      <div className="searchInputs">
-        <input
-          type="text"
-          placeholder={placeholder}
-          value={wordEntered}
-          onChange={handleFilter}
-        />
-        <div className="searchIcon">
-          {filteredData.length === 0 ? (
-            <SearchIcon onClick={handleFind} />
-          ) : (
-            <CloseIcon id="clearBtn" onClick={clearInput} />
-          )}
+  handleFilter(event) {
+    this.setState({ wordEntered: event.target.value });
+  }
+
+  handleFind() {
+    this.props.action(this.state.wordEntered);
+  }
+
+  clearInput() {
+    this.setState({ wordEntered: "" });
+  }
+
+  render() {
+    return (
+      <div className="search">
+        <div className="searchInputs">
+          <input
+            type="text"
+            placeholder={this.props.placeholder}
+            value={this.props.wordEntered}
+            onChange={this.handleFilter}
+          />
+          <div className="searchIcon">
+            <SearchIcon onClick={() => this.handleFind()} />
+          </div>
         </div>
       </div>
-      {filteredData.length !== 0 && (
-        <div className="dataResult">
-          {filteredData.slice(0, 15).map((value, key) => {
-            return (
-              <a className="dataItem" href={value.link} target="_blank">
-                <p>{value.title} </p>
-              </a>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
+    );
+  }
 }
 
 export default SearchBar;

@@ -15,16 +15,16 @@ class NoticeList extends Component {
             {this.props.news.map((noticeShow, index) => (
               <NoticeCD
                 key={index}
+                source={noticeShow.site}
                 title={noticeShow.title}
-                urlToImage={noticeShow.urlToImage}
-                url={noticeShow.url}
-                publishedAt={noticeShow.publishedAt}
+                img={noticeShow.img}
+                link={noticeShow.link}
+                date={noticeShow.date}
               />
             ))}
           </div>
         ) : (
-          <div className="cLoader">
-          </div>
+          <div className="cLoader"></div>
         ) }
       </React.Fragment>
     );

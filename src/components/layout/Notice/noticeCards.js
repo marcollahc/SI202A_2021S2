@@ -11,19 +11,20 @@ const Capa = styled.img`
 
 class NoticeCD extends Component {
   state = {
+    source: "",
     title: "",
-    url: "",
-    urlToImage: "",
+    link: "",
+    img: "",
     description: "",
-    publishedAt: "",
-    content:"",
+    date: "",
+    desc:"",
     imageLoading: true,
     toManyRequests: false,
   };
 
   componentDidMount() {
-    const { title, urlToImage, url, publishedAt, content} = this.props;
-    this.setState({ title, urlToImage, url, publishedAt, content});
+    const { source, title, img, link, date, desc} = this.props;
+    this.setState({ source, title, img, link, date, desc });
   }
 
   render() {
@@ -32,7 +33,7 @@ class NoticeCD extends Component {
         <div className="mainCardNotices">
           <div
             className="CardNotices"
-            onClick={() => window.open(this.state.url)}
+            onClick={() => window.open(`https://${this.state.link}`, '_blank')}
           >
             {this.state.imageLoading ? <div className="cLoader" style={{height:"200px", 
             width:"200px",
@@ -41,12 +42,12 @@ class NoticeCD extends Component {
             marginTop: "85px"}}></div> : null}
             <Capa
               className="cardImage"
-              src={this.state.urlToImage}
+              src={this.state.img}
               onLoad={() => this.setState({ imageLoading: false })}
               onError={() => this.setState({ toManyRequests: false })}
               style={this.state.imageLoading ? null : { display: "block" }}
             />
-            <h4>{this.state.title}</h4>
+            <h4>[{this.state.source}] {this.state.title}</h4>
           </div>
         </div>
       </div>
